@@ -3,21 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ResponseCodeComponent } from './response-code/response-code.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 
-import { FormsModule } from '@angular/forms';
-import { AddResponseCodesComponent } from './add-response-codes/add-response-codes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TableComponent } from './table/table.component';
+import { AddNewResponseCodeComponent } from './add-new-response-code/add-new-response-code.component';
+import { EditResponseCodeComponent } from './edit-response-code/edit-response-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResponseCodeComponent,
-    AddResponseCodesComponent,
+    TableComponent,
+    AddNewResponseCodeComponent,
+    EditResponseCodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { AddResponseCodesComponent } from './add-response-codes/add-response-cod
     MatTableModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

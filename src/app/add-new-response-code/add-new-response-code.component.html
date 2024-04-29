@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="/action_page.php">
+    <form class="form">
         <div class="row">
             <div class="col-25">
                 <label for="apiname">API Name</label>
@@ -41,8 +41,8 @@
             </div>
             <div class="col-75">
                 <select id="profile" name="profile" [(ngModel)]="show_profile_strategy">
-                    <option [ngValue]="False">False</option>
                     <option [ngValue]="True">True</option>
+                    <option [ngValue]="False">False</option>
                 </select>
             </div>
         </div>
@@ -55,5 +55,9 @@
             </div>
         </div>
         <br>
+        <div class="control-buttons">
+            <button>Add</button>
+            <button>Discard</button>
+        </div>
     </form>
 </div>

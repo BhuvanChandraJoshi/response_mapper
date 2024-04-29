@@ -1,0 +1,30 @@
+<button (click)="addNew()">Add New</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>API Name</th>
+            <th>Test Case</th>
+            <th>Result</th>
+            <th>Message</th>
+            <th>Profile</th>
+            <th>Profile Strategy</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of tableData | keyvalue">
+            <td>
+                <button (click)="edit(item.key)">Edit</button>
+                <button (click)="delete(item.key)">Delete</button>
+            </td>
+            <td>{{ item.value.apiName }}</td> <!-- Accessing the 'apiName' field from the value of the map entry -->
+            <td>{{ item.value.testCase }}</td>
+            <td>{{ item.value.result }}</td>
+            <td>{{ item.value.message }}</td>
+            <td>{{ item.value.profile }}</td>
+            <td>{{ item.value.profileStrategy }}</td>
+        </tr>
+    </tbody>
+</table>

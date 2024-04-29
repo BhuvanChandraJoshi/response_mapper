@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ResponseCodeComponent } from './response-code/response-code.component';
 import { AppComponent } from './app.component';
+import { AddNewResponseCodeComponent } from './add-new-response-code/add-new-response-code.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
-  { path: '', outlet: 'appComponent', component: AppComponent },
-  { path: 'addResponseCode', outlet: 'resoonseCodeComponent', component: ResponseCodeComponent },
+  { path: '', component: TableComponent },
+  { path: 'addNewResponseCode', component: AddNewResponseCodeComponent }
 ];
 
 @NgModule({
