@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { DataService } from '../data.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-add-new-response-code',
   templateUrl: './add-new-response-code.component.html',
@@ -21,7 +23,7 @@ export class AddNewResponseCodeComponent {
   profileStrategy: string;
 
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.apiName = '';
     this.testCase = '';
     this.result = this.True;
@@ -40,15 +42,20 @@ export class AddNewResponseCodeComponent {
       profile: this.profile,
       profileStrategy: this.profileStrategy
     });
-    console.log(this.dataService.getData());
+    this.router.navigate(['/']);
+
+  }
+
+  reset() {
+    this.apiName = '';
+    this.testCase = '';
+    this.result = this.True;
+    this.message = '';
+    this.profile = true;
+    this.profileStrategy = 'static';
   }
 
   discard() {
-    this.apiName = '';
-    this.testCase = '';
-    this.result = true;
-    this.message = '';
-    this.profile = this.True;
-    this.profileStrategy = 'static';
+    this.router.navigate(['/']);
   }
 }

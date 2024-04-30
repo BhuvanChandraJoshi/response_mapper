@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { DataService, tableDataInterface } from '../data.service';
 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-response-code',
@@ -26,7 +27,7 @@ export class EditResponseCodeComponent implements OnInit {
 
   responseCodeId: any;
 
-  constructor(private route: ActivatedRoute, private dataService: DataService) {
+  constructor(private route: ActivatedRoute, private dataService: DataService, private router: Router) {
     this.apiName = '';
     this.testCase = '';
     this.result = this.True;
@@ -58,14 +59,19 @@ export class EditResponseCodeComponent implements OnInit {
       profile: this.profile,
       profileStrategy: this.profileStrategy
     });
+    this.router.navigate(['/']);
   }
 
-  discard() {
+  reset() {
     this.apiName = this.responseCodeData.apiName;
     this.testCase = this.responseCodeData.testCase;
     this.result = this.responseCodeData.result;
     this.message = this.responseCodeData.message;
     this.profile = this.responseCodeData.profile;
     this.profileStrategy = this.responseCodeData.profileStrategy;
+  }
+
+  discard() {
+    this.router.navigate(['/']);
   }
 }
