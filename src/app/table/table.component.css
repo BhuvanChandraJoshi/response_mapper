@@ -10,3 +10,13 @@ th {
     text-align: left;
     padding: 8px;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+}

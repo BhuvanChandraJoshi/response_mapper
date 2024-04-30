@@ -1,4 +1,4 @@
-<button (click)="addNew()">Add New</button>
+<a href="/addNewResponseCode"><button>Add New</button></a>
 
 <table>
     <thead>
@@ -16,10 +16,10 @@
     <tbody>
         <tr *ngFor="let item of tableData | keyvalue">
             <td>
-                <button (click)="edit(item.key)">Edit</button>
+                <a [routerLink]="['/editResponseCode', item.key]"><button>Edit</button></a>
                 <button (click)="delete(item.key)">Delete</button>
             </td>
-            <td>{{ item.value.apiName }}</td> <!-- Accessing the 'apiName' field from the value of the map entry -->
+            <td>{{ item.value.apiName }}</td>
             <td>{{ item.value.testCase }}</td>
             <td>{{ item.value.result }}</td>
             <td>{{ item.value.message }}</td>

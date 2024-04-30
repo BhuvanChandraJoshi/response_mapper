@@ -14,9 +14,20 @@ export interface tableDataInterface {
   providedIn: 'root'
 })
 export class DataService {
-  tableData = new Map<string, tableDataInterface>();
+  tableData: Map<string, tableDataInterface>;
 
-  constructor() { }
+  constructor() {
+    this.tableData = new Map<string, tableDataInterface>();
+    this.tableData.set('1', { id: '1', apiName: 'ReqPay', testCase: '000', result: true, message: '', profile: true, profileStrategy: 'static' })
+  }
+
+  getNewId(): string {
+    return (this.tableData.size).toString();
+  }
+
+  getElementById(id: string) {
+    return this.tableData.get(id);
+  }
 
   getData(): Map<string, tableDataInterface> {
     return this.tableData;

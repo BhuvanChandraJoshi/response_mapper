@@ -13,14 +13,6 @@ export class TableComponent {
     this.tableData = this.dataService.getData();
   }
 
-  addNew() {
-
-  }
-
-  edit(id: string) {
-
-  }
-
   delete(id: string) {
     this.dataService.deleteData(id);
   }

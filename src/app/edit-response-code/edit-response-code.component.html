@@ -1,1 +1,68 @@
-<p>edit-response-code works!</p>
+<a [routerLink]="['/']"><button>Table</button></a>
+
+<div class="container">
+    <form class="form">
+        <div class="row">
+            <div class="col-25">
+                <label for="apiname">API Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="apiname" name="api_name" placeholder="API Name" [(ngModel)]="apiName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="testcase">Test Case</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="testcase" name="test_case" placeholder="Test Case" [(ngModel)]="testCase">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="result">Result</label>
+            </div>
+            <div class="col-75">
+                <select id="result" name="result" [(ngModel)]="result">
+                    <option [ngValue]="True">True</option>
+                    <option [ngValue]="False">False</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="message">Message</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="message" name="message" placeholder="Message" [(ngModel)]="message">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="profile">Profile</label>
+            </div>
+            <div class="col-75">
+                <select id="profile" name="profile" [(ngModel)]="profile">
+                    <option [ngValue]="True">True</option>
+                    <option [ngValue]="False">False</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" *ngIf="show_profile_strategy">
+            <div class="col-25">
+                <label for="profilestrategy">Profile Strategy</label>
+            </div>
+            <div class="col-75">
+                <select id="profilestrategy" name="profilestrategy" [(ngModel)]="profileStrategy">
+                    <option value="static">Static</option>
+                    <option value="random">Random</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="control-buttons">
+            <button (click)="save()">Save</button>
+            <button (click)="discard()">Discard</button>
+        </div>
+    </form>
+</div>
