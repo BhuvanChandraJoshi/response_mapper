@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-new-response-code.component.css']
 })
 export class AddNewResponseCodeComponent {
-  show_profile_strategy: boolean = true;
 
   False: boolean = false;
   True: boolean = true;

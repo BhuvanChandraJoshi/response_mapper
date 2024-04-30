@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-response-code.component.css']
 })
 export class EditResponseCodeComponent implements OnInit {
-  show_profile_strategy: boolean = true;
 
   False: boolean = false;
   True: boolean = true;
