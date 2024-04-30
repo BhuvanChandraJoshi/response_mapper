@@ -41,6 +41,7 @@ export class AddNewResponseCodeComponent {
       profile: this.profile,
       profileStrategy: this.profileStrategy
     });
+    console.log(this.dataService.getData());
     this.router.navigate(['/']);
 
   }

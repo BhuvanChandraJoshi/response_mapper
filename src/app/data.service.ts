@@ -22,7 +22,7 @@ export class DataService {
   }
 
   getNewId(): string {
-    return (this.tableData.size).toString();
+    return (this.tableData.size + 1).toString();
   }
 
   getElementById(id: string) {
