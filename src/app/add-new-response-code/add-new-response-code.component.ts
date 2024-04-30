@@ -39,7 +39,7 @@ export class AddNewResponseCodeComponent {
       result: this.result,
       message: this.message,
       profile: this.profile,
-      profileStrategy: this.profileStrategy
+      profileStrategy: this.profile === true ? this.profileStrategy : ''
     });
     console.log(this.dataService.getData());
     this.router.navigate(['/']);

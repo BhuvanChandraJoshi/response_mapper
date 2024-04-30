@@ -56,7 +56,7 @@ export class EditResponseCodeComponent implements OnInit {
       result: this.result,
       message: this.message,
       profile: this.profile,
-      profileStrategy: this.profileStrategy
+      profileStrategy: this.profile === true ? this.profileStrategy : '',
     });
     this.router.navigate(['/']);
   }
